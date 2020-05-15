@@ -1,7 +1,7 @@
 # Original-Googlemap
 ### 仕様
 1. python3.6*, django2.2* でビルド
-1. base.htmlの'ここに「Googlemap Javascript API」をいれる'をAPIkeyをいれる
+1. base.htmlの'ここに「Googlemap Javascript API」をいれる'にAPIkeyをいれる
 1. 各所アイコンにfont-awesomeを使用
 1. スカイツリーにメインマーカーを立ててる
 
