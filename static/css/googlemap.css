@@ -1,0 +1,306 @@
+  table td {
+    font-size: 14px;
+    color: gray;
+  }
+  table {
+    background-color: white;
+    border-collapse: collapse;
+  }
+  input[type="text"]:focus {
+    outline: 0;
+  }
+  ::placeholder {
+    color: lightgrey;
+  }
+  button{
+    padding: 0;
+    padding: 10px 0 0 0\9;/*IE10以下用*/
+    color:inherit;
+  }
+  /*IE10以上用*/
+  @media all and (-ms-high-contrast: none) {
+    button{
+      padding: 10px 0 0 0;
+    }
+  }
+  [class^="col-"],
+  [class*=" col-"] {
+      flex:none;
+      float: left;
+  }
+
+  :focus {
+    outline: 0;
+  }
+  .color-mouseover{
+    background-color: #fffaf0;
+  }
+  .color-white{
+    background-color: white;
+  }
+
+  .popup {
+    display: none;
+    padding: 10px;
+    font-size: 12px;
+    /*line-height: 1.6em;*/
+    color: #fff;
+    border-radius: 5px;
+    background: #000;
+    width: 200px;
+  }
+
+  /* ~オートコンプリート~ */
+  .pac-container {
+    width: 26% !important;
+    margin-left: -2.62%;
+    margin-top: 2px;
+    box-shadow: 0px 3px 5px lightgray;
+  }
+  .pac-icon{
+    margin: 7px;
+    margin-left: 15px;
+  }
+  .pac-item-query {
+    padding-left: 10px;
+    padding-top: 10px !important;
+    font-size: 14px;
+  }
+  .pac-item{
+    padding-top: 7px;
+    border: none;
+  }
+
+  /*インフォウィンドウ*/
+  .gm-style-iw {
+    -ms-overflow-style: none;
+  }
+
+  form {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(at top, #b5e6cf, #9dddad);
+  }
+  /*左側のウィンドウ関連*/
+  .left-window{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .left-window-sub{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
+  }
+  .list-search-result{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 90;
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .hidden-field{
+    /*display: none;*/
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    text-align: center;
+    padding-top: 80px;
+  }
+  .box-textsearch{
+    position: relative;
+    top: 17px;
+    left: 3%;
+    /*width: 80%;*/
+    z-index: 100;
+    height: 50px;
+    border-radius: 8px 8px 8px 8px;
+    background-color: white;
+  }
+  .input-textsearch{
+    position: relative;
+    margin-top: 0.8em !important;
+    margin-left: 8%;
+    width: 100%;
+    height: 27px;
+    border: none;
+    font-size: 1em;
+  }
+  .btn-textsearch{
+    margin-top: 0.3em;
+    /*margin-right: px;*/
+    padding: 8px;
+    width: 80%;
+    /*padding-right: 10px;*/
+    height:70%;
+    white-space: nowrap;
+    font-size: 1em;
+    border: none;
+    box-shadow: 0px 0px 5px lightgray inset;
+    border-radius: 8px 8px 8px 8px;
+    color: lightgrey;
+  }
+  .show-window{
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    padding-top: 20px;
+  }
+  .hide-window{
+    position: relative;
+    top: 20px;
+    right: -3px;
+    height: 50px;
+    z-index: 100;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+  }
+  .container{
+    padding: 0;
+    margin: 0;
+  }
+  .row{
+    padding: 0;
+    margin: 0;
+  }
+  /*~セレクトボックス系~*/
+  .select-box {
+    cursor: pointer;
+    position : relative;
+    max-width:  20em;
+    width: 100%;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 5px;
+  }
+  .select,
+  .label {
+    /*color: white;*/
+    color: #397AF2;
+    display: block;
+    font: 400 17px/2em 'Source Sans Pro', sans-serif;
+  }
+  .select {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 5px 0;
+    height: 40px;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    background: none transparent;
+    border: 0 none;
+  }
+  .select-box1 {
+    /*background: #397AF2;*/
+    background: white;
+  }
+  .label {
+    position: relative;
+    padding: 0.5em 1.1em;
+    cursor: pointer;
+    text-align: left;
+    border: 1px solid #397AF2;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  .label::after {
+    content: "▼";
+    font-size: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5em 1.1em;
+    border-left: 0.4em solid #397AF2;
+    background: white;
+    border-radius: 0 5px 5px 0;
+  }
+
+  @media screen and (max-width:768px){
+    .input-textsearch{
+      position: relative;
+      margin-top: 12px;
+      margin-left: 8%;
+      width: 100%;
+      height: 27px;
+      border: none;
+      font-size: 0.8em;
+    }
+    .btn-textsearch{
+      margin-top: 7px;
+      /*margin-right: px;*/
+      padding: 0.8em;
+      width: 90%;
+      /*padding-right: 10px;*/
+      text-align: center;
+      height:70%;
+      white-space: nowrap;
+      font-size: 0.8em;
+      border: none;
+      box-shadow: 0px 0px 5px lightgray inset;
+      border-radius: 8px 8px 8px 8px;
+      color: lightgrey;
+    }
+    /* ~オートコンプリート~ */
+    .pac-container {
+      width: 43% !important;
+      margin-left: -2.62%;
+      margin-top: 2px;
+      box-shadow: 0px 3px 5px lightgray;
+    }
+    .pac-icon{
+      margin: 3px;
+      margin-left: 7px;
+    }
+    .pac-item-query {
+      padding-left: 5px;
+      padding-top: 5px !important;
+      font-size: 10px;
+    }
+    /* ~ロングタップでのテキスト選択不可~ */
+    strong {
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    /*~セレクトボックス系~*/
+    .label-desc{
+      font-size: 0.8em;
+    }
+    .label {
+      position: relative;
+      padding: 0.4em 0.5em;
+      cursor: pointer;
+      text-align: left;
+      border: 1px solid #397AF2;
+      border-radius: 5px;
+      font-size: 0.8em;
+    }
+    .label::after {
+      content: "▼";
+      font-size: 0.8em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0.5em 0.5em;
+      border-left: 0.5em solid #397AF2;
+      background: white;
+      border-radius: 0 5px 5px 0;
+    }
+  }

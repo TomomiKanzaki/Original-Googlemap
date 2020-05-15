@@ -1,0 +1,72 @@
+- extends 'base.html'
+- block content
+    .container
+        -# セレクトボックス
+        .row.selectBox{style:"position: absolute; z-index: 100; top: 15px; right: 5px; width: 100%;"}
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12{style:"padding: 0;"}
+                .col-xs-8.col-sm-8.col-md-7.col-lg-7{style:"padding: 0;"} &nbsp;
+                .col-xs-2.col-sm-2.col-md-2.col-lg-2{style:"padding: 0;"}
+                    .select-box
+                        %label.label.select-box1{for:"selectNearby"}
+                            %span.label-desc ---
+                        %select.select{id:"selectNearby", name:"selectNearby", style:"width: 100%; font-size: 15px; box-shadow: 2px 2px 5px gray;"}
+                            - for option in search
+                                %option{value: option} #{option}
+                        %input{id:"array_search", type:"hidden", name:"array_search", value:"#{search}"}
+
+                .col-xs-2.col-sm-2.col-md-2.col-lg-2{style:"padding: 0 0 0 0.3em;"}
+                    .select-box
+                        %label.label.select-box1{for:"transportation"}
+                            %span.label-desc 徒歩
+                        %select.select{id:"transportation", name:"transportation", style:"width: 100%; font-size: 15px; box-shadow: 2px 2px 5px gray;"}
+                            - for option in transportation
+                                %option{value: option} #{option}
+                        %input{id:"array_transportation", type:"hidden", name:"array_transportation", value:"#{transportation}"}
+
+        -# 左側のフィールド
+        .row
+            .left-window.col-xs-7.col-sm-7.col-md-4.col-lg-3{style:"padding: 0; margin: 0;"}
+                .search-box.col-xs-12.col-sm-12.col-md-12.col-lg-12{style:"padding: 0; position: relative;"}
+                    -# 検索ボックス
+                    .box-textsearch.col-xs-9.col-sm-9.col-md-9.col-lg-9
+                        .col-xs-8.col-sm-8.col-md-8.col-lg-8{style:"padding: 0;", valign:"middle"}
+                            %input.input-textsearch{id:"search-box", type:"text", placeholder:"フリーワード検索", name:"search-box"}
+                        .col-xs-4.col-sm-4.col-md-4.col-lg-4{style:"padding: 0;", align:"right"}
+                            %button.btn-textsearch{id:"search-btn", type: "button"}検索
+                    .hide-window.col-xs-3.col-sm-3.col-md-3.col-lg-3{style:"padding: 0;"}
+                        %button{type: 'submit', style:"background-color: transparent; border: none; padding: 0;"}
+                            %i.fa.fa-arrow-circle-left{style:"color:white;"}
+                -# 周辺検索結果リスト
+                .list-search-result
+                    %div{id: "blue-field", style:"position:relative; width: 100%; max-height: 185px; background-color: #397AF2; box-shadow: 2px 2px 5px gray;", align: "center"}
+                        .hidden-field
+                            .col-xs-12.col-sm-12.col-md-12.col-lg-12{style:"padding: 0 10px 15px 10px; margin-top: 10px;"}
+                                .street-view.col-xs-4.col-sm-4.col-md-4.col-lg-4{style:"padding: 0; border: 1px solid white; border-right: hidden; color: white;"}
+                                    %div{style:"width: 100%;"}
+                                        %button{type: 'submit', style:"background-color: transparent; font-size: 2.5em; border: none;"}
+                                            %i.fa.fa-street-view
+                                    %div{style:"width: 100%; font-size: 0.5em; white-space: nowrap; padding-bottom: 10px;"}
+                                        ストリートビュー
+                                .normal-map.col-xs-4.col-sm-4.col-md-4.col-lg-4{style:"padding: 0; border: 1px solid white; border-right: hidden; color: #397AF2; background: white;"}
+                                    %div{style:"width: 100%;"}
+                                        %button{type: 'submit', style:"background-color: transparent; font-size: 2.5em; border: none;"}
+                                            %i.fa.fa-map-o
+                                    %div{style:"width: 100%; font-size: 0.5em; white-space: nowrap; padding-bottom: 10px;"}
+                                        通常マップ
+                                .aerial-map.col-xs-4.col-sm-4.col-md-4.col-lg-4{style:"padding: 0; border: 1px solid white; color: white;"}
+                                    %div{style:"width: 100%;"}
+                                        %button{type: 'submit', style:"background-color: transparent; font-size: 2.5em; border: none;"}
+                                            %i.fa.fa-map
+                                    %div{style:"width: 100%; font-size: 0.5em; white-space: nowrap; padding-bottom: 10px;"}
+                                        航空写真マップ
+
+                    %div{id:"list", style:"position: relative; -webkit-overflow-scrolling: touch; overflow-y:auto; width: 100%; height: auto; box-shadow: 2px 2px 5px gray;"}
+                        %table.nearbyTable{style:"width: 100%;"}
+
+        .row
+            .left-window-sub.col-xs-2.col-sm-1.col-md-1.col-lg-1{style:"padding: 0; margin: 0;"}
+                %div{style:"position:relative; width: 100%; height: 90px; background-color: #397AF2; box-shadow: 2px 2px 5px gray;"}
+                    .show-window
+                        %button{type: 'submit', style:"background-color: transparent; font-size: 1em; border: none;"}
+                            %i.fa.fa-arrow-circle-right{style:"color:white;"}
+        %div.map{id:"map",style:"position: absolute; top: 0; width:100%; height: 100vh;"}
